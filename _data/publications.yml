@@ -1,0 +1,23 @@
+- title: "Joint Modelling Histology and Molecular Markers for Cancer Classification"
+  authors: "Wang, X.¹, <strong>Liu, H.</strong>¹, et al."
+  venue: "Medical Image Analysis (IF: 10.9, Q1)"
+  year: 2025
+  type: "published"  # 标记类型：published 或 under_review
+  links:
+    - name: "网页"
+      url: "https://www.sciencedirect.com/..."
+      icon: "fas fa-link"
+    - name: "预览"
+      url: "https://arxiv.org/..."
+      icon: "fas fa-file-pdf"
+    - name: "下载"
+      url: "/paper/MedIA2024.pdf"
+      icon: "fas fa-download"
+  abstract: "This paper introduces a novel approach for cancer classification..."
+
+- title: "FOD-Diff: 3D Multi-Channel Patch Diffusion Model for Fiber Orientation Distribution"
+  authors: "Tang H, <strong>Liu, H.*</strong>, et al."
+  venue: "MICCAI 2025"
+  type: "under_review"
+  links: # 在投论文可能没有链接，留空即可
+  abstract: ""

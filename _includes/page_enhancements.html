@@ -1,0 +1,147 @@
+<style>
+   /* 悬浮工具栏样式优化 */
+   .floating-tools {
+       position: fixed;
+       bottom: 20px;
+       right: 20px;
+       z-index: 9999;
+       display: flex;
+       flex-direction: column;
+       gap: 10px;
+       align-items: flex-end;
+   }
+
+   .tool-btn {
+       background-color: rgba(0, 123, 255, 0.9);
+       color: white;
+       border: none;
+       padding: 10px 15px;
+       cursor: pointer;
+       border-radius: 30px; /* 圆角胶囊样式 */
+       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+       transition: all 0.3s ease;
+       font-size: 14px;
+       backdrop-filter: blur(5px);
+   }
+
+   .tool-btn:hover {
+       transform: translateY(-2px);
+       box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+   }
+/* === 增强的 UI 样式 === */
+   
+   /* 1. 学历部分的响应式布局 */
+   .education-row {
+       display: flex;
+       align-items: center; /* 垂直居中 */
+       justify-content: space-between;
+       margin-bottom: 20px;
+       flex-wrap: wrap; /* 允许在小屏幕换行 */
+       gap: 15px;
+       border-bottom: 1px dashed #eee; /* 增加分割线 */
+       padding-bottom: 10px;
+   }
+   
+   .edu-text { flex: 1; min-width: 250px; }
+   .edu-logo { height: 50px; width: auto; object-fit: contain; }
+
+   /* 2. 科研项目卡片化设计 */
+   .projects-grid {
+       display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 响应式网格 */
+       gap: 15px;
+       margin-top: 15px;
+   }
+
+   .project-card {
+       padding: 15px;
+       border: 1px solid #e0e0e0;
+       border-radius: 12px;
+       background: #fff;
+       transition: transform 0.2s, box-shadow 0.2s;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+   }
+
+   .project-card:hover {
+       transform: translateY(-3px); /* 悬浮上浮效果 */
+       box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+       border-color: #007BFF;
+   }
+
+   .project-title { font-weight: bold; color: #333; margin-bottom: 5px; font-size: 1.05em; }
+   .project-meta { font-size: 0.85em; color: #666; margin-bottom: 5px; }
+   .project-role { font-size: 0.9em; color: #007BFF; }
+   
+   /* 暗色模式样式 */
+   body.dark-mode {
+       background-color: #121212 !important;
+       color: #e0e0e0 !important;
+   }
+   
+   body.dark-mode .publication-item,
+   body.dark-mode .project-card {
+       background-color: #1e1e1e !important;
+       border-color: #333 !important;
+       color: #ccc !important;
+   }
+
+   body.dark-mode .publication-detail {
+       background-color: #252525 !important;
+       border-top-color: #333 !important;
+   }
+   
+   body.dark-mode a { color: #58a6ff !important; }
+   body.dark-mode .tool-btn { background-color: rgba(50, 50, 50, 0.9); }
+
+   /* 隐藏 Google Translate 顶部横幅，仅保留功能 */
+   .goog-te-banner-frame { display: none !important; }
+   body { top: 0px !important; }
+</style>
+
+<div class="floating-tools">
+   <div id="google_translate_element"></div>
+   <button class="tool-btn" onclick="toggleDark()" id="darkModeBtn">🌙 切换模式</button>
+</div>
+
+<script type="text/javascript">
+   // Google Translate Init
+   function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+         pageLanguage: 'zh-CN',
+         includedLanguages: 'zh-CN,zh-TW,en,fr,es,ja,ko,de',
+         layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+         autoDisplay: false
+      }, 'google_translate_element');
+   }
+
+   // Load Translate Script
+   (function() {
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+      document.body.appendChild(script);
+   })();
+
+   // Dark Mode Logic with LocalStorage
+   const body = document.body;
+   const btn = document.getElementById('darkModeBtn');
+   
+   // 检查是否有保存的偏好
+   if (localStorage.getItem('theme') === 'dark') {
+       body.classList.add('dark-mode');
+       btn.innerText = '☀️ 切换模式';
+   }
+
+   function toggleDark() {
+       body.classList.toggle('dark-mode');
+       if (body.classList.contains('dark-mode')) {
+           localStorage.setItem('theme', 'dark');
+           btn.innerText = '☀️ 切换模式';
+       } else {
+           localStorage.setItem('theme', 'light');
+           btn.innerText = '🌙 切换模式';
+       }
+   }
+</script>
