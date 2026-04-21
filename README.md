@@ -52,6 +52,19 @@ AcadHomepage
 1. 将你的主页内容添加到 [_pages/about.md](../_pages/about.md).
 1. 你的主页将会被部署到`https://USERNAME.github.io`.
 
+
+## 内容维护建议（本仓库已支持）
+
+为了降低页面内容与模板代码的耦合，建议优先修改以下数据文件：
+
+- `_data/profile.yml`：关于我、研究兴趣、教育经历、荣誉奖项、学术会议。
+- `_data/publications.yml`：论文列表（已发表/在投）。
+- `_data/projects.yml`：科研项目卡片。
+- `_data/navigation.yml`：顶部导航锚点。
+- `/_pages/my-papers.md`：论文专页模板（会优先读取 Google Scholar 同步数据）。
+
+这样你在增删改内容时，通常不需要修改`_pages/about.md`里的页面结构代码。
+
 ## 本地调试
 
 1. 使用`git clone`将本项目克隆到本地。
