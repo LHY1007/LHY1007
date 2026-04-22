@@ -7,7 +7,10 @@
 
 # Site Settings
 title                    : "刘涵瑜"
-# repository               : "tangjyan/tangjyan.github.io"
+url                      : "https://lhy1007.github.io"
+baseurl                  : "/LHY1007"
+repository               : "LHY1007/LHY1007"
+google_scholar_stats_use_cdn : false
 google_scholar_stats_use_cdn : false
 
 # google analytics

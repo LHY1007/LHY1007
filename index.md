@@ -3,9 +3,6 @@ layout: default
 title: ""
 excerpt: ""
 author_profile: true
-redirect_from:
-  - /about/
-  - /about.html
 ---
 
 {% include page_enhancements.html %}
@@ -74,7 +71,7 @@ redirect_from:
 ## 💻 科研项目
 
 <div class="projects-grid">
-  {% for project in site.data.projects %}
+  {% for project in site.data.profile.projects %}
   <div class="project-card">
     <div class="project-title">{{ project.title }}</div>
     <div class="project-meta"><i class="far fa-clock"></i> {{ project.period }}</div>
