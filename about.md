@@ -1,11 +1,8 @@
 ---
 layout: default
-title: ""
-excerpt: ""
+title: "关于我"
+excerpt: "个人学术主页"
 author_profile: true
-redirect_from:
-  - /about/
-  - /about.html
 ---
 
 {% include page_enhancements.html %}
@@ -46,7 +43,7 @@ redirect_from:
 
 为了避免主页过长，论文列表已迁移到独立页面：
 
-- 👉 [查看完整论文列表（按 Google Scholar 同步）](/my-papers/)
+- 👉 [查看完整论文列表（按 Google Scholar 同步）]({{ site.baseurl }}{% link my-papers.md %})
 
 你也可以在下方查看最近代表作（从本地数据读取）：
 
@@ -74,7 +71,7 @@ redirect_from:
 ## 💻 科研项目
 
 <div class="projects-grid">
-  {% for project in site.data.projects %}
+  {% for project in site.data.profile.projects %}
   <div class="project-card">
     <div class="project-title">{{ project.title }}</div>
     <div class="project-meta"><i class="far fa-clock"></i> {{ project.period }}</div>

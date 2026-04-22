@@ -1,6 +1,5 @@
 ---
 layout: default
-permalink: /my-papers/
 title: "我的论文"
 excerpt: "Google Scholar 全量论文列表"
 author_profile: true
